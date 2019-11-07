@@ -9,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.eduardo_assign3.seeker.Seeker;
-import com.example.eduardo_assign3.seeker.SeekerService;
-
 /**
  * Student Name: Eduardo Santana
  * Student Number: 301048660

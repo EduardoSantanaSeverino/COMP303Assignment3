@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.eduardo_assign3.bloodbank.BloodBank;
-
 /**
  * Student Name: Eduardo Santana
  * Student Number: 301048660

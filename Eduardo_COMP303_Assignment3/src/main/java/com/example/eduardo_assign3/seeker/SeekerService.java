@@ -4,7 +4,6 @@
 package com.example.eduardo_assign3.seeker;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.stereotype.Service;
 

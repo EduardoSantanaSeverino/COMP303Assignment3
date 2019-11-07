@@ -1,6 +1,5 @@
 package com.example.eduardo_assign3.generic;
 
-import java.io.Serializable;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
