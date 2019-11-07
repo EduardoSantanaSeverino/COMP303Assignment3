@@ -33,5 +33,32 @@ public class SeekerService {
 		return list;
 	}
 	
+	public Seeker getItem(String id)
+	{
+		return list.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+	}
+	
+	public void createItem(Seeker item)
+	{
+		item.setId(Seeker.createID());
+		this.list.add(item);
+	}
+
+	public void updateItem(String id, Seeker item) {
+		for (int i = 0; i < this.list.size(); i++)
+		{
+			Seeker obj = this.list.get(i);
+			if(obj.getId().equals(id))
+			{
+				item.setId(id);
+				this.list.set(i, item);
+				return;
+			}
+		}
+	}
+
+	public void deleteItem(String id) {
+		this.list.removeIf(t -> t.getId().equals(id));
+	}
 
 }

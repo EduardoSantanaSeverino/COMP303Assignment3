@@ -3,6 +3,8 @@
  */
 package com.example.eduardo_assign3.seeker;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 /**
  * Student Name: Eduardo Santana
  * Student Number: 301048660
@@ -12,6 +14,7 @@ package com.example.eduardo_assign3.seeker;
 
 public class Seeker {
 
+	private String id;
 	private String firstName ;
 	private String lastName ;
 	private String ageOrDOB ;
@@ -20,6 +23,20 @@ public class Seeker {
 	private String city ;
 	private String phone ;
 	
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	/**
 	 * 
@@ -37,8 +54,16 @@ public class Seeker {
 	 * @param city
 	 * @param phone
 	 */
-	public Seeker(String firstName, String lastName, String ageOrDOB, String gender, String bloodGroup, String city,
-			String phone) {
+	public Seeker(
+			String firstName, 
+			String lastName, 
+			String ageOrDOB, 
+			String gender, 
+			String bloodGroup, 
+			String city,
+			String phone) 
+	{
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.ageOrDOB = ageOrDOB;
@@ -46,6 +71,7 @@ public class Seeker {
 		this.bloodGroup = bloodGroup;
 		this.city = city;
 		this.phone = phone;
+		this.id = createID();
 	} 
 	
 	
@@ -132,6 +158,13 @@ public class Seeker {
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	private static AtomicLong idCounter = new AtomicLong();
+
+	public static String createID()
+	{
+	    return String.valueOf(idCounter.getAndIncrement() + 1);
 	}
 	
 }
