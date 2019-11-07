@@ -3,7 +3,7 @@
  */
 package com.example.eduardo_assign3.seeker;
 
-import java.util.concurrent.atomic.AtomicLong;
+import com.example.eduardo_assign3.generic.EntityBase;
 
 /**
  * Student Name: Eduardo Santana
@@ -12,9 +12,8 @@ import java.util.concurrent.atomic.AtomicLong;
  * File Created: Nov. 6, 2019
  */
 
-public class Seeker {
+public class Seeker extends EntityBase {
 
-	private String id;
 	private String firstName ;
 	private String lastName ;
 	private String ageOrDOB ;
@@ -23,26 +22,11 @@ public class Seeker {
 	private String city ;
 	private String phone ;
 	
-
 	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
-	 * 
+	 * Default constructor
 	 */
 	public Seeker() {
-	
+		super();
 	} 
 	
 	/**
@@ -63,7 +47,7 @@ public class Seeker {
 			String city,
 			String phone) 
 	{
-		
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.ageOrDOB = ageOrDOB;
@@ -73,7 +57,6 @@ public class Seeker {
 		this.phone = phone;
 		this.id = createID();
 	} 
-	
 	
 	/**
 	 * @return the firstName
@@ -159,13 +142,6 @@ public class Seeker {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	private static AtomicLong idCounter = new AtomicLong();
 
-	public static String createID()
-	{
-	    return String.valueOf(idCounter.getAndIncrement() + 1);
-	}
-	
 }
 

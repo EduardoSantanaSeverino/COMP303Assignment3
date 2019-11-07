@@ -32,7 +32,7 @@ public class SeekerController {
 	}
 	
 	@RequestMapping(value = "/seekers/{id}", method = RequestMethod.GET)
-	public Seeker getItem(@PathVariable String id)
+	public Seeker getItem(@PathVariable int id)
 	{
 		return this.seekerService.getItem(id);
 	}
@@ -45,14 +45,14 @@ public class SeekerController {
 	}
 	
 	@RequestMapping(value = "/seekers/{id}", method = RequestMethod.PUT)
-	public String updateItem(@PathVariable String id, @RequestBody Seeker item)
+	public String updateItem(@PathVariable int id, @RequestBody Seeker item)
 	{
 		this.seekerService.updateItem(id, item);
 		return "Ok";
 	}
 	
 	@RequestMapping(value = "/seekers/{id}", method = RequestMethod.DELETE)
-	public String deleteItem(@PathVariable String id)
+	public String deleteItem(@PathVariable int id)
 	{
 		this.seekerService.deleteItem(id);
 		return "Ok";
