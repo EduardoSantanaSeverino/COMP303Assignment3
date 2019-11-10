@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.example.eduardo_assign3.bloodbank.BloodBankService;
+import com.example.eduardo_assign3.bloodstock.BloodStockService;
 import com.example.eduardo_assign3.seeker.SeekerService;
 
 @SpringBootApplication
@@ -23,10 +25,18 @@ public class SpringBootEduardoAssign3Appplication implements WebMvcConfigurer {
 	}
 	
 	@Bean
-	public ApplicationRunner booksInitializer(SeekerService seekerService) {
+	public ApplicationRunner booksInitializer
+	(
+			SeekerService seekerService,
+			BloodBankService bloodBankService,
+			BloodStockService bloodStockService
+	) 
+	{
 		return (args) -> 
 		{
 			seekerService.SeedDatabase();
+			bloodBankService.SeedDatabase();
+			bloodStockService.SeedDatabase();
 		};
 	}
 	

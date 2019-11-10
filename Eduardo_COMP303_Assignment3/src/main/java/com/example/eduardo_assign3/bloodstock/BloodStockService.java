@@ -3,6 +3,8 @@
  */
 package com.example.eduardo_assign3.bloodstock;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Service;
 
 import com.example.eduardo_assign3.generic.ServiceBaseAbstract;
@@ -31,6 +33,6 @@ public class BloodStockService extends ServiceBaseAbstract<BloodStock>
 	
 	public void SeedDatabase()
 	{
-		this.createItem(new BloodStock("Blood Group Passinated", "20", "2019-02-02", "Active"));
+		this.createItem(new BloodStock("Blood Group Passinated", 20, new Date(), "Active"));
 	}
 }
