@@ -11,6 +11,13 @@ import com.example.eduardo_assign3.bloodbank.BloodBankService;
 import com.example.eduardo_assign3.bloodstock.BloodStockService;
 import com.example.eduardo_assign3.seeker.SeekerService;
 
+/**
+ * Student Name: Eduardo Santana
+ * Student Number: 301048660
+ * Submission Date: 2019-11-15 (Estimated)
+ * File Created: Nov. 6, 2019
+ */
+
 @SpringBootApplication
 public class SpringBootEduardoAssign3Appplication implements WebMvcConfigurer {
 
@@ -24,6 +31,11 @@ public class SpringBootEduardoAssign3Appplication implements WebMvcConfigurer {
 		registry.addViewController("/").setViewName("index");
 	}
 	
+	/**
+	 * This method is used to load the in memory lists. 
+	 * inserting the default objects lists. it is called 
+	 * SeedDatabase because it is making the seed.
+	 */
 	@Bean
 	public ApplicationRunner booksInitializer
 	(

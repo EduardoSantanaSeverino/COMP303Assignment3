@@ -17,12 +17,8 @@ import com.example.eduardo_assign3.generic.ServiceBaseAbstract;
  */
 
 /**
- * @param bloodGroup
- * @param quantity
- * @param bestBefore
- * @param status
+ * BloodStockService we are re-using the ServiceBase almost 100 percent.
  */
-
 @Service
 public class BloodStockService extends ServiceBaseAbstract<BloodStock> 
 {

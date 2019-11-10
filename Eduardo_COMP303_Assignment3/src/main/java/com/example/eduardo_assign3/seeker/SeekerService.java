@@ -14,6 +14,9 @@ import com.example.eduardo_assign3.generic.ServiceBaseAbstract;
  * File Created: Nov. 6, 2019
  */
 
+/**
+ * SeekerService we are re-using the ServiceBase almost 100 percent.
+ */
 @Service
 public class SeekerService extends ServiceBaseAbstract<Seeker> 
 {
