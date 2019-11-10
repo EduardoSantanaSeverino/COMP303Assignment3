@@ -1,15 +1,19 @@
 package com.example.eduardo_assign3;
 
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.example.eduardo_assign3.seeker.SeekerService;
+
 @SpringBootApplication
-public class EduardoComp303Assignment3Application implements WebMvcConfigurer {
+public class SpringBootEduardoAssign3Appplication implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EduardoComp303Assignment3Application.class, args);
+		SpringApplication.run(SpringBootEduardoAssign3Appplication.class, args);
 		System.out.println("REST service started");
 	}
 
@@ -17,5 +21,13 @@ public class EduardoComp303Assignment3Application implements WebMvcConfigurer {
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("index");
 	}
-
+	
+	@Bean
+	public ApplicationRunner booksInitializer(SeekerService seekerService) {
+		return (args) -> 
+		{
+			seekerService.SeedDatabase();
+		};
+	}
+	
 }

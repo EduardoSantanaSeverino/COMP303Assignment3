@@ -46,11 +46,12 @@
 					<div class="panel panel-login">
 						<div class="logo-top">
 						
-													<a href="/">
+									<a href="/">
 								<h3>Blood Bank Information System</h3>
-								<h4>Seeker Details</h4>
+								<h4>Seeker Update</h4>
 							</a>
 							
+						
 						</div>
 						<div class="panel-body">
 							<div class="row">
@@ -59,58 +60,63 @@
 									<div class="main-content">
 								
 											<div class="card" style="display: block;">
-											
+											<form action="/seekers/update" method="post" role="form">
                                                    <div class="card-body">
-                                                       <h5 class="card-title">Seeker Details</h5>
-                                                       <h6 class="card-subtitle mb-2 text-muted">Seeker properties, we have enumerated the properties.</h6>
+                                                       <h5 class="card-title">Seeker Update</h5>
+                                                       <h6 class="card-subtitle mb-2 text-muted">Seeker properties, we have enumerated the properties so we can update.</h6>
                                                        <div class="card-text">
 
+															<input type="hidden" name="id" th:value="${item.id}">
+															
                                                            <div class="form-group">
 
                                                                <label for="firstName">First Name</label>
-                                                               <input readonly th:value="${item.firstName}" type="text" name="firstName" class="form-control" id="firstName" >
+                                                               <input th:value="${item.firstName}" type="text" name="firstName" class="form-control" id="firstName" >
 
                                                            </div>
 
                                                            <div class="form-group">
 
                                                                <label for="lastName">Last Name</label>
-                                                               <input readonly th:value="${item.lastName}" type="text" name="lastName" class="form-control" id="lastName" >
+                                                               <input th:value="${item.lastName}" type="text" name="lastName" class="form-control" id="lastName" >
 
                                                            </div>
                                                            
                                                            <div class="form-group">
 
                                                                <label for="bloodGroup">Age Or DOB</label>
-                                                               <input readonly th:value="${item.bloodGroup}" type="text" name="bloodGroup" class="form-control" id="bloodGroup" >
+                                                               <input th:value="${item.bloodGroup}" type="text" name="bloodGroup" class="form-control" id="bloodGroup" >
 
                                                            </div>
                                                            
                                                            <div class="form-group">
 
                                                                <label for="gender">Gender</label>
-                                                               <input readonly th:value="${item.gender}" type="text" name="gender" class="form-control" id="gender" >
+                                                               <input th:value="${item.gender}" type="text" name="gender" class="form-control" id="gender" >
 
                                                            </div>
                                                            
                                                            <div class="form-group">
 
                                                                <label for="city">City</label>
-                                                               <input readonly th:value="${item.city}" type="text" name="city" class="form-control" id="city" >
+                                                               <input th:value="${item.city}" type="text" name="city" class="form-control" id="city" >
 
                                                            </div>
                                                            
                                                            <div class="form-group">
 
                                                                <label for="phone">Phone</label>
-                                                               <input readonly th:value="${item.phone}" type="text" name="phone" class="form-control" id="phone" >
+                                                               <input th:value="${item.phone}" type="text" name="phone" class="form-control" id="phone" >
 
                                                            </div>
+                                                           
+                                                             <button type="submit" class="btn btn-primary" style="float:right;">Update</button>
                                                            
                                                            <div class="clearfix"></div>
 
                                                        </div>
                                                    </div>
+                                            </form>
                                             </div>
 											
 									</div>

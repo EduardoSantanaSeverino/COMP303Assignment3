@@ -3,8 +3,6 @@
  */
 package com.example.eduardo_assign3.seeker;
 
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Service;
 
 import com.example.eduardo_assign3.generic.ServiceBaseAbstract;
@@ -22,8 +20,12 @@ public class SeekerService extends ServiceBaseAbstract<Seeker>
 	public SeekerService()
 	{
 		super();
-		this.list = new ArrayList<Seeker>();
-		this.list.add(new Seeker("Eduardo", "Santana", "12", "Masculine", "R+", "Santo Domingo", "8093158978"));
 	}
-	
+
+	public void SeedDatabase()
+	{
+		this.createItem(new Seeker("Eduardo", "Santana", "25", "Male", "A+", "Santo Domingo", "+1809-315-8965"));
+		this.createItem(new Seeker("Martin", "Emilio", "15", "Male", "B+", "Santo Domingo", "+1809-315-9999"));
+		this.createItem(new Seeker("Ricky", "Marting", "35", "Male", "C+", "Santo Domingo", "+1809-315-8888"));
+	}
 }

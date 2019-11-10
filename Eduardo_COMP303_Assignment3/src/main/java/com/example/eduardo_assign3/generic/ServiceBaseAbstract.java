@@ -1,5 +1,6 @@
 package com.example.eduardo_assign3.generic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class  ServiceBaseAbstract <T extends EntityBase> {
@@ -9,6 +10,10 @@ public abstract class  ServiceBaseAbstract <T extends EntityBase> {
 	public ServiceBaseAbstract()
 	{
 		super();
+		if(this.list == null)
+		{
+			this.list = new ArrayList<T>();
+		}
 	}
 	
 	/** 

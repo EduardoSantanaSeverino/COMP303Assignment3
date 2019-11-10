@@ -2,8 +2,9 @@
     display: inline;
     vertical-align: top;
 }
+
 .panel-login .panel-body {
-    min-height: 600px;
+    min-height: 300px;
 }
 
 .table {

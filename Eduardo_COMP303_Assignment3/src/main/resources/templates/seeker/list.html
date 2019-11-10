@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
  
 	<!-- Site Metas -->
-	<title>List - JAVA EE - Eduardo</title>  
+	<title>Blood Bank Information System - JAVA EE - Eduardo</title>  
 	<meta name="description" content="List - JAVA EE - Eduardo">
 	<meta name="author" content="Eduardo Santana">
 
@@ -18,15 +18,15 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="/css/style.css"> 
 	<!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/all.min.css">  	
+    <link rel="stylesheet" href="/css/all.min.css">  	
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom_home.css">
+    <link rel="stylesheet" href="/css/custom_home.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 
@@ -45,46 +45,68 @@
 				<div class="col-md-10 offset-md-1">
 					<div class="panel panel-login">
 						<div class="logo-top">
-							<a href="#"><img src="images/logo.png" alt="" /></a>
+						
+							<a href="/">
+								<h3>Blood Bank Information System</h3>
+								<h4>Seeker List</h4>
+							</a>
+					
 						</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12">
-									<div class="main-content">
+									
+									<div class="main-content" style="text-align: center; margin-top: 30px;">
+									
+										<div th:if="${not #strings.isEmpty(error_message)}">
+									    	<div class="alert alert-danger" role="alert" th:text="${error_message}">
+											</div>
+										</div>
 										
-												<table class="table table-bordered table-hover table-striped">
+										<div th:if="${not #strings.isEmpty(info_message)}">
+											<div class="alert alert-success" role="alert" th:text="${info_message}">
+											</div>
+										</div>
+										
+											<table class="table table-bordered table-hover table-striped">
 												<thead>
 												  <tr>
+												  
 													<th scope="col">#</th>
-													<th scope="col">Date</th>
-													<th scope="col">Status</th>
-													<th scope="col">Amount</th>
+													<th scope="col">First Name</th>
+													<th scope="col">Last Name</th>
+													<th scope="col">Gender </th>
+													<th scope="col">Phone </th>
 													<th scope="col" style="width: 15px;"></th>
 													<th scope="col" style="width: 15px;"></th>
+													<th scope="col" style="width: 15px;"></th>
+													
 												  </tr>
 												</thead>
 												<tbody>
 												
-												
-													   <tr>  
-													   <td> </td>  
-													   <td></td>  
-													   <td></td>  
-													   <td></td>  
-													 
-													   <td>
-													   		
-													   </td>  
-													   <td>   
-													   	 
-													   	</td>  
-													   </tr>  
-												
-													   
+												<tr th:each="item : ${items}">
+									                <td th:text="${item.id}"></td>
+									                <td th:text="${item.firstName}"></td>
+									                <td th:text="${item.lastName}"></td>
+									                <td th:text="${item.gender}"></td>
+									                <td th:text="${item.phone}"></td>
+									                <td><a th:href="@{/seekers/details/{id}(id=${item.id})}" class="btn btn-primary">Details</a></td>
+									                <td><a th:href="@{/seekers/update/{id}(id=${item.id})}" class="btn btn-warning">Edit</a></td>
+									                <td>
+									                
+									                <form th:action="@{/seekers/delete/{id}(id=${item.id})}" method="post" role="form">
+											   			<input type="submit" class="btn btn-danger" value="Delete"/>
+											   		</form>
+											   		
+									                </td>
+									            </tr>
+									            
 												</tbody>
 											  </table>
 											
 									</div>
+									
 								</div>
 							</div>
 						</div>
