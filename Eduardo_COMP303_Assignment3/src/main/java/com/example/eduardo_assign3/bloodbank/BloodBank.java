@@ -3,6 +3,8 @@
  */
 package com.example.eduardo_assign3.bloodbank;
 
+import com.example.eduardo_assign3.generic.EntityBase;
+
 /**
  * Student Name: Eduardo Santana
  * Student Number: 301048660
@@ -10,7 +12,7 @@ package com.example.eduardo_assign3.bloodbank;
  * File Created: Nov. 6, 2019
  */
 
-public class BloodBank {
+public class BloodBank extends EntityBase {
 
 	private String bloodbankName;
 	private String address;
@@ -40,9 +42,8 @@ public class BloodBank {
 		this.phone = phone;
 		this.website = website;
 		this.email = email;
+		this.id = createID();
 	}
-	
-	
 	
 	/**
 	 * @return the bloodbankName

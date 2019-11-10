@@ -3,10 +3,9 @@
  */
 package com.example.eduardo_assign3.bloodstock;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Service;
+
+import com.example.eduardo_assign3.generic.ServiceBaseAbstract;
 
 /**
  * Student Name: Eduardo Santana
@@ -22,23 +21,16 @@ import org.springframework.stereotype.Service;
  * @param status
  */
 
-
 @Service
-public class BloodStockService {
-
-	private List<BloodStock> list;
-	
+public class BloodStockService extends ServiceBaseAbstract<BloodStock> 
+{
 	public BloodStockService()
 	{
-		this.list = new ArrayList<BloodStock>();
-		this.list.add(new BloodStock("Blood Group Passinated", "20", "2019-02-02", "Active"));
+		super();
 	}
 	
-	/** 
-	 * @return the list
-	 */
-	public List<BloodStock> getAll() {
-		return list;
+	public void SeedDatabase()
+	{
+		this.createItem(new BloodStock("Blood Group Passinated", "20", "2019-02-02", "Active"));
 	}
-	
 }

@@ -3,6 +3,8 @@
  */
 package com.example.eduardo_assign3.bloodstock;
 
+import com.example.eduardo_assign3.generic.EntityBase;
+
 /**
  * Student Name: Eduardo Santana
  * Student Number: 301048660
@@ -10,7 +12,7 @@ package com.example.eduardo_assign3.bloodstock;
  * File Created: Nov. 6, 2019
  */
 
-public class BloodStock {
+public class BloodStock extends EntityBase {
 
 	private String BloodGroup;
 	private String Quantity;
@@ -33,6 +35,7 @@ public class BloodStock {
 		Quantity = quantity;
 		BestBefore = bestBefore;
 		Status = status;
+		this.id = createID();
 	}
 	
 	/**
