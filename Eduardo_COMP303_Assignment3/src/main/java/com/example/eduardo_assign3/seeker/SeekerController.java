@@ -81,7 +81,7 @@ public class SeekerController
     public ModelAndView createItem(@ModelAttribute Seeker item, HttpServletRequest request)
 	{
 	
-		this.seekerService.updateItem(item.getId(), item);
+		this.seekerService.createItem(item);
 		boolean isValid = item != null;
 		
 		if(isValid)

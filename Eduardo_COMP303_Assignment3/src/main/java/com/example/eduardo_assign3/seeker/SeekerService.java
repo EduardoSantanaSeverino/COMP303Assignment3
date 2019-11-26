@@ -15,7 +15,7 @@ import com.example.eduardo_assign3.generic.ServiceBaseAbstract;
  */
 
 /**
- * SeekerService we are re-using the ServiceBase almost 100 percent.
+ * SeekerService we are re-using the ServiceBase almost 100 percent or de code.
  */
 @Service
 public class SeekerService extends ServiceBaseAbstract<Seeker> 
